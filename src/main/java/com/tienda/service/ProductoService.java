@@ -16,6 +16,12 @@ public interface ProductoService {
     
     // Se elimina el producto que tiene el id pasado por parámetro
     public void delete(Producto producto);
+    
+    //Ejemplo de un metodo que hace una consulta apliada de JPA
+    public List<Producto> consultaAmpliada(double precioI,double precioS);
+    
+     //Ejemplo de un metodo que hace una consulta apliada de JPA
+    public List<Producto> consultaJPQL(double precioI,double precioS);
 }
 
 

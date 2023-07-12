@@ -41,4 +41,21 @@ public class ProductoServiceImpl implements ProductoService{
     public void delete(Producto producto) {
         productoDao.delete(producto);
     }
+    
+    //Ejemplo de un metodo que hace una consulta apliada de JPA
+     @Override
+    @Transactional(readOnly = true)
+    public List<Producto> consultaAmpliada(double precioI,double precio){
+       return productoDao.findByPrecioBetweenOrderByDescripcion(precioI, precio);
+    }
+    
+    //Ejemplo de un metodo que hace una consulta apliada de JPA
+     @Override
+    @Transactional(readOnly = true)
+    public List<Producto> consultaJPQL(double precioI,double precio){
+       return productoDao.consultaConJPQL(precioI, precio);
+    }
+    
+    
+    
 }
